@@ -9,6 +9,9 @@ motorA = 0
 motorB = 0
 motorC = 0
 motorManager = BusClient.BusClient(15001)
+capture = cv2.VideoCapture(0)
+capture.set(3, 1920)
+capture.set(4, 1080)
 
 def setMotor(motor, angle):
 
@@ -20,7 +23,6 @@ def setMotor(motor, angle):
             return done
 
 def takePicture(Number):
-    capture = cv2.VideoCapture(0)
     _,image = capture.retrieve()
     cv2.imwrite("Pictures/"+str(Number)+".jpg", image)
     cv2.destroyAllWindows()
