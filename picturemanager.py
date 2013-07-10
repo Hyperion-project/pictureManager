@@ -26,10 +26,10 @@ def setMotor(motor, angle):
 def takePicture(Number):
     _,image = capture.retrieve()
     cv2.imwrite("Pictures/"+str(Number)+".jpg", image)
-    cv2.destroyAllWindows()
     global pictureNumber
     pictureNumber = pictureNumber + 1
     time.sleep(2)
+    cv2.destroyAllWindows()
 
 def parseAction(x):
     return {
