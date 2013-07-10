@@ -1,6 +1,7 @@
 __author__ = 'Kenney'
 
 import cv2
+import time
 import multibus
 from multibus import BusClient, BusCore, BusServer
 
@@ -28,6 +29,7 @@ def takePicture(Number):
     cv2.destroyAllWindows()
     global pictureNumber
     pictureNumber = pictureNumber + 1
+    time.sleep(2)
 
 def parseAction(x):
     return {
