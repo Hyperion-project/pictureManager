@@ -48,6 +48,7 @@ if __name__ == '__main__':
         if packet.action == BusCore.PacketType.STARTSCAN:
             for motorB in range(0, 360, 45):
                 if setMotor("B", motorB):
-                    for motorA in range(-13, 13, 1):
-                        if setMotor("A", motorA):
+                    for motorA in range(-26, 26, 1):
+                        motA = motorA/2
+                        if setMotor("A", motA):
                             takePicture(pictureNumber)
